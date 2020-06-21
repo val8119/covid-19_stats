@@ -1,16 +1,8 @@
-// Variables
-var totalConf;
-var totalRec;
-var totalDth;
-
-// Create a request variable and assign a new XMLHttpRequest object to it.
 var request = new XMLHttpRequest();
 
-// Open a new connection, using the GET request on the URL endpoint
 request.open("GET", "https://api.covid19api.com/summary", true);
 
 request.onload = function () {
-    // Begin accessing JSON data here
     var data = JSON.parse(this.response);
 
     var newConfirmed = data.Global.NewConfirmed;
@@ -28,12 +20,9 @@ request.onload = function () {
     document.getElementById("totalRecovered").innerHTML = totalRecovered.toLocaleString();
 
     am4core.useTheme(am4themes_animated);
-    // Themes end
 
-    // Create chart instance
     var chart = am4core.create("chartdiv", am4charts.PieChart);
 
-    // Add data
     chart.data = [{
         "title": "Total recovered",
         "number": totalRecovered
@@ -45,7 +34,6 @@ request.onload = function () {
         "number": totalConfirmed - totalRecovered - totalDeaths
     }];
 
-    // Add and configure Series
     var pieSeries = chart.series.push(new am4charts.PieSeries());
     pieSeries.dataFields.value = "number";
     pieSeries.dataFields.category = "title";
@@ -53,11 +41,9 @@ request.onload = function () {
     pieSeries.slices.template.strokeWidth = 2;
     pieSeries.slices.template.strokeOpacity = 1;
 
-    // This creates initial animation
     pieSeries.hiddenState.properties.opacity = 1;
     pieSeries.hiddenState.properties.endAngle = -90;
     pieSeries.hiddenState.properties.startAngle = -90;
 }
 
-// Send request
 request.send();
