@@ -15,13 +15,10 @@ request.onload = function () {
 
     var newConfirmed = data.Global.NewConfirmed;
     var totalConfirmed = data.Global.TotalConfirmed;
-    totalConf = totalConfirmed;
     var newDeaths = data.Global.NewDeaths;
     var totalDeaths = data.Global.TotalDeaths;
-    totalDth = totalDeaths;
     var newRecovered = data.Global.NewRecovered;
     var totalRecovered = data.Global.TotalRecovered;
-    totalRec = totalRecovered;
 
     document.getElementById("newConfirmed").innerHTML = newConfirmed.toLocaleString();
     document.getElementById("totalConfirmed").innerHTML = totalConfirmed.toLocaleString();
@@ -38,14 +35,14 @@ request.onload = function () {
 
     // Add data
     chart.data = [{
-        "title": "Total confirmed",
-        "number": document.getElementById("totalConfirmed").innerHTML
-    }, {
         "title": "Total recovered",
-        "number": document.getElementById("totalRecovered").innerHTML
+        "number": totalRecovered
     }, {
         "title": "Total deaths",
-        "number": document.getElementById("totalDeaths").innerHTML
+        "number": totalDeaths
+    }, {
+        "title": "Unresolved",
+        "number": totalConfirmed - totalRecovered - totalDeaths
     }];
 
     // Add and configure Series
