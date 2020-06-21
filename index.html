@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text
+                y=%220.975em%22 font-size=%2279%22>🦠</text></svg>">
+    <title>COVID-19 Stats</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>COVID-19 General Statistics</h1>
+    </div>
+    <div class="data">
+        <table id="statistics">
+            <tr>
+                <td>New confirmed</td>
+                <td id="newConfirmed"></td>
+            </tr>
+            <tr>
+                <td>Total confirmed</td>
+                <td id="totalConfirmed"></td>
+            </tr>
+            <tr>
+                <td>New deaths</td>
+                <td id="newDeaths"></td>
+            </tr>
+            <tr>
+                <td>Total deaths</td>
+                <td id="totalDeaths"></td>
+            </tr>
+            <tr>
+                <td>New recovered</td>
+                <td id="newRecovered"></td>
+            </tr>
+            <tr>
+                <td>Total recovered</td>
+                <td id="totalRecovered"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="chartdiv" style="width: 100%; height: 500px"></div>
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>

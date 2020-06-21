@@ -1,0 +1,40 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.title h1 {
+    font-weight: normal;
+    margin-top: 3%;
+}
+
+.data {
+    margin: 3%;
+    margin-top: 1%;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    width: 40%;
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+#chartdiv {
+    margin-top: -2%;
+}
